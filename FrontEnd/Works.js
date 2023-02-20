@@ -23,3 +23,21 @@ fetch('http://localhost:5678/api/works')
     });
 
   });
+
+  fetch('http://localhost:5678/api/categories')
+  .then(response => response.json())
+  .then(projects => {
+
+    const filter = document.querySelector('.filter');
+
+    projects.forEach(project => {
+
+      const button = document.createElement('button');
+
+      button.textContent = project.name
+
+      filter.appendChild(button);
+      
+    });
+
+  });

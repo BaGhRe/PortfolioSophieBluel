@@ -125,6 +125,17 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
+button {
+	border: 2px #1D6154 solid;
+    border-radius: 25px;
+    height: 50px;
+	width: auto;
+	font-size: 1em;
+	background-color: #E5E5E5;
+    padding: 15px;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
