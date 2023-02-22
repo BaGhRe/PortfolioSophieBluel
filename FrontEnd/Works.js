@@ -19,7 +19,7 @@ fetch('http://localhost:5678/api/works')
       figure.appendChild(img);
       figure.appendChild(figcaption);
       gallery.appendChild(figure);
-      figure.classList.add("filterDiv", data.categoryId, "show"); // Une classe "cachée" qui servira pour les filtres
+      figure.classList.add("filterDiv", project.categoryId, "show"); // Une classe "cachée" qui servira pour les filtres
     });
 
   });
