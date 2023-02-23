@@ -88,6 +88,8 @@ nav ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
+	font-family: 'Syne';
+    font-weight: 400;
 
 }
 nav li {
@@ -98,6 +100,12 @@ nav li {
 li:hover {
 	color: #B1663C;
 }
+
+.projet-titre {
+    font-weight: 700;
+    font-size: 15px;
+}
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -176,7 +184,6 @@ li:hover {
 
 }
 
-
 #contact {
 	width: 50%;
 margin: auto;
@@ -230,4 +237,14 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em
 }
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #B1663C;
+}
+
 
