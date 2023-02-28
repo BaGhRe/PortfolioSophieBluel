@@ -1,3 +1,4 @@
+// appel l'API pour récuperer les projets
 fetch('http://localhost:5678/api/works')
   .then(response => response.json())
   .then(projects => {
@@ -5,7 +6,7 @@ fetch('http://localhost:5678/api/works')
     const gallery = document.querySelector('.gallery');
 
     gallery.innerHTML = '' ;
-
+    // ajout des projets à la gallerie
     projects.forEach(project => {
       const figure = document.createElement('figure');
       const img = document.createElement('img');
@@ -19,7 +20,7 @@ fetch('http://localhost:5678/api/works')
       figure.appendChild(img);
       figure.appendChild(figcaption);
       gallery.appendChild(figure);
-      figure.classList.add("filterDiv", project.categoryId, "show"); // Une classe "cachée" qui servira pour les filtres
+      figure.classList.add("filterDiv", project.categoryId, "show"); // classe "cachée" qui servira pour les filtres
     });
 
   });
@@ -30,14 +31,14 @@ function filterSelection(c) {
     let x, i;
     x = document.getElementsByClassName("filterDiv");
     if (c == "all") c = "";
-    // Ajoute la classe "show" aux éléments filtrés, et l'enlève à ceux non sélectionnés
+    // Ajoute classe "show" aux éléments filtrés, l'enlève à ceux non sélectionnés
     for (i = 0; i < x.length; i++) {
         enleverClasseShow(x[i], "show");
         if (x[i].className.indexOf(c) > -1) ajouterClasseShow(x[i], "show");
     }
 };
 
-// Afficher les éléments filtrés
+// afficher les éléments filtrés
 function ajouterClasseShow(element, name) {
     let i, arr1, arr2;
     arr1 = element.className.split(" ");
@@ -49,7 +50,7 @@ function ajouterClasseShow(element, name) {
     }
 };
 
-// Cacher les éléments non filtrés
+// cacher les éléments non filtrés
 function enleverClasseShow(element, name) {
     let i, arr1, arr2;
     arr1 = element.className.split(" ");
@@ -62,7 +63,7 @@ function enleverClasseShow(element, name) {
     element.className = arr1.join(" ");
 };
 
-// Ajouter la classe "show" au bouton actif
+// ajouter la classe "show" au bouton actif
 let btnContainer = document.getElementById("btnFilters");
 let btns = btnContainer.getElementsByClassName("btn");
 console.log(btns);

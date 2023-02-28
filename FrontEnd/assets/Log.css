@@ -278,3 +278,11 @@ a:hover {
     font-weight: 700;
     font-size: 15px;
 }
+
+#password {
+    margin-bottom: 1em;
+}
+
+.erreur {
+    color: #b1663c;
+}
