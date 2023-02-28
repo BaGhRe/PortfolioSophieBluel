@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Sophie Bluel - Architecte d'intérieur</title>
@@ -10,6 +11,7 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/Log.css">
 </head>
+
 <body>
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
@@ -22,17 +24,19 @@
 		</ul>
 	</nav>
 </header>
+
 <main>
 	<section id="contact">
         <h2>Login</h2>
-        <form action="#">
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email">
-            <label for="password">Mot de passe</label>
-            <input type="password" name="password" id="password">
+        <form class="formulaire-connexion" methode="post">
+            <label>E-mail</label>
+            <input type="email" name="email" id="email" required>
+            <label>Mot de passe</label>
+            <input type="password" name="password" id="password" required>
+			<div class="erreur"></div>
             <input type="submit" value="Se connecter" id="login">
-            <a href="#" id="mdp-oublie">Mot de passe oublié</a>
         </form>
+		<a href="#" id="mdp-oublie">Mot de passe oublié</a>
     </section>
 </main>
 
@@ -43,5 +47,7 @@
 		</ul>
 	</nav>
 </footer>
+<script src="./Log.js" defer></script>
 </body>
+
 </html>
