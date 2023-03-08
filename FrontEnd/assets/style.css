@@ -75,14 +75,13 @@ h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
 }
 
 h2{
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
-	color: #1D6154
+	color: #1D6154;
 }
 nav ul {
 	display: flex;
@@ -247,4 +246,157 @@ a:hover {
     color: #B1663C;
 }
 
+.container {
+    overflow: hidden;
+}
 
+/* barre modification */
+
+.barre-modification {
+    display: flex;
+    background-color: black;
+    height: 3.5em;
+    justify-content: center;
+    align-items: center;
+}
+
+.titre-barre {
+    color: white;
+    margin-left: 0.5em;
+}
+
+.bouton-edition {
+    font-family: 'Syne';
+    background-color: white;
+    border: 1px solid white;
+    margin-left: 1em;
+    height: 2.3em;
+    width: 14em;
+    border-radius: 1.3em;
+    cursor: pointer;
+}
+
+.bouton-edition:hover {
+    background-color: #B1663C;
+    border: 1px solid #B1663C;
+    color: white;
+}
+
+.mode-edition {
+    display: flex;
+}
+
+.modification-photo {
+    margin: 1em 0em 5em 4em;
+}
+
+.modification-texte {
+    margin-bottom: 1em;
+}
+
+.projets-titre-modifications {
+    display: flex;
+    justify-content: center;
+}
+
+.modification-projets {
+    margin: 0.7em 0em 0em 2em;
+}
+
+/* modale */
+
+.modal {
+    width: 30%;
+    height: 40em;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.modal-wrapper {
+    width: 28%;
+    height: 43em;
+    background-color: white;
+    border-radius: 0.7em;
+    overflow: auto;
+}
+
+#titlemodal {
+    color: black;
+    font-weight: 400;
+}
+
+.x-close {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1.5em 1.5em 1em 0em;
+}
+
+.boutons-modale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.galerie-photo {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    border-bottom: 0.8px solid black;
+    width: 75%;
+    margin: -1em 0em 1.5em 4.8em;
+    padding-bottom: 1.5em;
+}
+
+.modale-ajout-btn {
+    font-family: 'Syne';
+    color: white;
+    background-color: #1D6154;
+    border: 1px solid #1D6154;
+    width: 180px;
+    border-radius: 60px;
+    padding: 0.5em 0.3em 0.5em 0.3em;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.modale-supprimer-btn {
+    color: #B1663C;
+}
+
+.figure-modale {
+    position: relative;
+}
+
+.figure-modale>figcaption {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.figure-modale>img {
+    width: 4.9em;
+    height: 7em;
+    margin: 0.7em 0.7em 0em 0em;
+}
+
+.figure-modale .poubelle-icone {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-size: 9px;
+    cursor: pointer;
+}

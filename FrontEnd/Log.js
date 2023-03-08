@@ -44,7 +44,7 @@ function fonctionConnexion() {
         // on récupère le token dans la réponse du fetch
         let reponseFetch = await response.json();
         let token = reponseFetch.token; // pour récupérer le "token" dans l'API
-        console.log(token);
+        // console.log(token);
 
         // on appelle les fonctions créées précédemment :
 
@@ -53,11 +53,14 @@ function fonctionConnexion() {
             // on stocke le token dans le localStorage pour le récupérer plus tard
             window.localStorage.setItem("token", token);
             connexionReussie();
+            //console.log(token);
         } // si la connexion échoue : */
         else if (response.status === 401 || 404) {
             connexionEchouee();
         }
     });
 };
+
+
 
 fonctionConnexion();
