@@ -271,7 +271,7 @@ a:hover {
     border: 1px solid white;
     margin-left: 1em;
     height: 2.3em;
-    width: 14em;
+    width: 15em;
     border-radius: 1.3em;
     cursor: pointer;
 }
@@ -355,11 +355,14 @@ a:hover {
 }
 
 .modale-ajout-btn {
-    font-family: 'Syne';
-    color: white;
     background-color: #1D6154;
     border: 1px solid #1D6154;
-    width: 180px;
+}
+
+.style-input-modale {
+    font-family: 'Syne';
+    color: white;
+    width: 250px;
     border-radius: 60px;
     padding: 0.5em 0.3em 0.5em 0.3em;
     margin-bottom: 1em;
@@ -385,9 +388,32 @@ a:hover {
     margin: 0.7em 0.7em 0em 0em;
 }
 
-.figure-modale .poubelle-icone {
-    width: 15px;
-    height: 15px;
+.icone-modale-delete {
+    font-size: 10px;
+    color: white;
+}
+
+.figure-modale .move-icone {
+    display: none;
+    font-size: 10px;
+    color: white;
+    position: absolute;
+    top: 13px;
+    left: 3.2em;
+    background-color: black;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.figure-modale:hover .move-icone {
+    display: flex;
+}
+
+.bouton-modale-delete {
+    border: 0px;
+    background-color: black;
+    width: 14px;
+    height: 14px;
     position: absolute;
     top: 13px;
     right: 13px;
@@ -395,8 +421,129 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    color: white;
     font-size: 9px;
     cursor: pointer;
+}
+
+/*modale ajout*/
+
+.modale-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    height: 43em;
+    background-color: white;
+    border-radius: 0.7em;
+    overflow: auto;
+}
+
+.icones-retour-ajout {
+    align-self: flex-start;
+    margin: 1.5em 1.5em 1.5em 1.5em;
+}
+
+.icone-fermer-upload {
+    display: flex;
+    align-self: flex-end;
+    margin: -2.7em 1.5em 1.5em 1.5em;
+}
+
+.form-upload {
+    display: flex;
+    width: 83%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.image-upload-icone {
+    color: #CBD6DC;
+    font-size: 70px;
+    margin-top: 0.1em;
+}
+
+.image-load {
+    width: 60%;
+    align-items: center;
+    height: 10.5em;
+}
+
+.image-upload {
+    background-color: #E8F1F6;
+    height: 10.5em;
+    width: 85%;
+    margin: 0em 0em 2em 0em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sous-titre-upload {
+    font-size: 10px;
+}
+
+.title-upload-image {
+    background-color: #CBD6DC;
+    color: #306685;
+    border: 0px solid #CBD6DC;
+    border-radius: 1.2em;
+    cursor: pointer;
+    padding: 0.6em 0.8em 0.6em 0.8em;
+    margin: 0.5em 0em -0.7em 0em;
+}
+
+#upload-image {
+    opacity: 0;
+}
+
+.form-category {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 83%;
+    padding-bottom: 0em;
+    border-bottom: 0.5px solid grey;
+}
+
+.input {
+    font-family: 'Syne';
+    font-weight: 700;
+    color: black;
+    background-color: white;
+    margin: 2em auto;
+    width: 100%;
+    height: 3em;
+    box-shadow: 1px 1px 1.5px 1.5px rgba(0, 0, 0, 0.2);
+    border: 0px solid white;
+}
+
+.upload-title-form {
+    align-self: flex-start;
+    margin: 0em 0em -1em 0em;
+}
+
+.upload-input-submit {
+    width: 250px;
+    background-color: #A7A7A7;
+    border: 0px;
+}
+
+.upload-input-submit:hover {
+    background-color: #1D6154;
+    border: 0px;
+}
+
+
+#error-message-work {
+    color: #B1663C;
+    display: none;
+    margin-top: 1em;
+}
+
+#validation-message-work {
+    display: none;
+    color: #1D6154;
+    margin-top: 1em;
 }

@@ -1,29 +1,31 @@
 // appel l'API pour récuperer les projets
-fetch('http://localhost:5678/api/works')
-  .then(response => response.json())
-  .then(projects => {
 
-    const gallery = document.querySelector('.gallery');
+function createWork(work) {
+    const sectionElement = document.querySelector(".gallery");
+    const figureElement = document.createElement("figure");
+    figureElement.classList.add("filterDiv", work.categoryId, "show"); // une classe pour les filtres
+    figureElement.setAttribute("id", "galery " + work.id);
+    const imageElement = document.createElement("img");
+    imageElement.src = work.imageUrl;
+    imageElement.setAttribute("crossorigin", 'anonymous');
+    const figcaptionElement = document.createElement("figcaption");
+    figcaptionElement.innerText = work.title;
+    figureElement.appendChild(imageElement);
+    figureElement.appendChild(figcaptionElement);
+    sectionElement.appendChild(figureElement);
+}
 
-    gallery.innerHTML = '' ;
-    // ajout des projets à la gallerie
-    projects.forEach(project => {
-      const figure = document.createElement('figure');
-      const img = document.createElement('img');
-      const figcaption = document.createElement('figcaption');
-      
-      img.src = project.imageUrl;
-      img.alt = project.title;
-      img.crossOrigin = 'anonymous'
-      figcaption.textContent = project.title;
+async function postWork() {
+    const response = await fetch("http://localhost:5678/api/works");
+    const json = await response.json();
+    json.forEach(work => { // une boucle qui parcours les travaux tant qu'il y en a dans l'API
+        createWork(work);
+    })
+};
 
-      figure.appendChild(img);
-      figure.appendChild(figcaption);
-      gallery.appendChild(figure);
-      figure.classList.add("filterDiv", project.categoryId, "show"); // classe "cachée" qui servira pour les filtres
-    });
+postWork();
 
-  });
+// filtres
 
   filterSelection("all");
 
@@ -31,7 +33,7 @@ function filterSelection(c) {
     let x, i;
     x = document.getElementsByClassName("filterDiv");
     if (c == "all") c = "";
-    // Ajoute classe "show" aux éléments filtrés, l'enlève à ceux non sélectionnés
+    // ajoute classe "show" aux éléments filtrés, l'enlève à ceux non sélectionnés
     for (i = 0; i < x.length; i++) {
         enleverClasseShow(x[i], "show");
         if (x[i].className.indexOf(c) > -1) ajouterClasseShow(x[i], "show");
