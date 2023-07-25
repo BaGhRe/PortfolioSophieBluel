@@ -2,12 +2,11 @@
 const getToken = window.sessionStorage.getItem("token");
 
 // se déconnecter :
-function logout(e) {
-    e.preventDefault();
-    // vider le localStorage
-    localStorage.clear();
+function logout() {
+    // vider le sessionStorage
+    sessionStorage.clear();
     // retourner à la page d'accueil
-    window.location.href = "index.html";
+    window.location.href = "./index.html";
 };
 
 // afficher les éléments du mode admin :
@@ -15,8 +14,9 @@ if (getToken !== null) {
 
     // modifier "login" en "logout"
     let loginNavName = document.querySelector(".connexion-admin");
-    loginNavName.innerHTML = " "
     loginNavName.innerText = "logout";
+    loginNavName.removeAttribute('href');
+    loginNavName.style.cursor = "pointer";
     // retourner page d'accueil
     loginNavName.addEventListener('click', logout);
     // afficher les éléments de la page admin :
